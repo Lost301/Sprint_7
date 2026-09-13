@@ -1,7 +1,7 @@
 import allure
 import requests
 
-from helpers import BASE_URL
+from constants import BASE_URL
 
 
 @allure.epic('Orders')

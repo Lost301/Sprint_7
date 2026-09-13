@@ -1,7 +1,8 @@
 import allure
 import requests
 
-from helpers import BASE_URL, delete_courier, login_courier, register_new_courier
+from constants import BASE_URL
+from helpers import delete_courier, login_courier, register_new_courier
 
 
 @allure.epic('Courier')

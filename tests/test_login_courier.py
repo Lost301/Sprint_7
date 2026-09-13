@@ -1,7 +1,8 @@
 import allure
 import requests
 
-from helpers import BASE_URL, generate_random_string
+from constants import BASE_URL
+from helpers import generate_random_string
 
 
 @allure.epic('Courier')

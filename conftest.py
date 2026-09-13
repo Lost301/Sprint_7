@@ -17,8 +17,7 @@ def courier_credentials():
 
 @pytest.fixture
 def courier_id(courier_credentials):
-    courier_id = login_courier(courier_credentials[0], courier_credentials[1])
-    yield courier_id
+    return login_courier(courier_credentials[0], courier_credentials[1])
 
 
 @pytest.fixture
@@ -28,3 +27,12 @@ def order_track():
     yield track
     with allure.step('Отменяем тестовый заказ'):
         cancel_order(track)
+
+
+@pytest.fixture
+def created_tracks():
+    tracks = []
+    yield tracks
+    with allure.step('Отменяем созданные в тесте заказы'):
+        for track in tracks:
+            cancel_order(track)
